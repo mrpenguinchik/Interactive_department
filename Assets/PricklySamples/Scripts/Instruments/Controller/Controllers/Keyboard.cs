@@ -8,6 +8,7 @@ public class Keyboard : Controller
     [SerializeField] private KeyCode _left;
     [SerializeField] private KeyCode _right;
     [SerializeField] private KeyCode _reload;
+    [SerializeField] private KeyCode _sprint;
     protected override Vector2 GetDirection()
     {
         int vertical = 0;
@@ -32,11 +33,17 @@ public class Keyboard : Controller
         {
             horizontal = -1;
         }
+
         if (Input.GetKey(_reload) == true)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-
+        if (Input.GetKey(_sprint) == true)
+        {
+            horizontal *= 2;
+            vertical *= 2;
+        }
         return new Vector2(horizontal, vertical);
     }
+  
 }

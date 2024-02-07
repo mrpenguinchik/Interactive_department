@@ -76,14 +76,15 @@ public abstract class Movement : InGameObject, IInitializable<IController, Movem
         transform.rotation = Quaternion.Euler(EulerX, EulerY, 0);
       //  print(transform.rotation.eulerAngles.y);
         _rigidbody.velocity = _speed * Time.deltaTime * direction.z*new Vector3( transform.forward.x,0,transform.forward.z);
-      
+        _rigidbody.velocity += _speed * Time.deltaTime * direction.x * new Vector3(transform.right.x, 0, transform.right.z); ;
+
         //    Rotation += (float)Math.PI * direction.x / (100);
         //    float speed = _rotationSpeed * Velocity;
         //Quaternion rot = _controller.Rotate(new Vector3((float)Math.Sin(Rotation), 0, (float)Math.Cos(Rotation)));
         //rot.x = 0;
         //rot.z = 0;
         //    transform.rotation = Quaternion.RotateTowards(transform.rotation,rot, speed);
-        
+
     }
 
     public void StopMove()

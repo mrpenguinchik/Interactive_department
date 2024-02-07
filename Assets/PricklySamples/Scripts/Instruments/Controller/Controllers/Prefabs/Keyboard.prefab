@@ -49,3 +49,4 @@ MonoBehaviour:
   _left: 97
   _right: 100
   _reload: 293
+  _sprint: 304
