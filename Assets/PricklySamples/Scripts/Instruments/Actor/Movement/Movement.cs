@@ -2,6 +2,7 @@ using Prickly.Core;
 using NaughtyAttributes;
 using UnityEngine;
 using System;
+using Unity.PlasticSCM.Editor.WebApi;
 
 public abstract class Movement : InGameObject, IInitializable<IController, MovementStat>, IUpgradable
 {
@@ -15,7 +16,9 @@ public abstract class Movement : InGameObject, IInitializable<IController, Movem
     [ShowNonSerializedField] private float _maxSpeed;
     [SerializeField] private float _speed;
     [SerializeField] private float _maxRotationSpeed = 10;
+
     [ShowNonSerializedField] private float _rotationSpeed;
+    
     float Rotation=0;
     public float Velocity => Mathf.Max(Mathf.Abs(_controller.Direction.x), Mathf.Abs(_controller.Direction.y));
     public Vector3 Direction => new Vector3(_controller.Direction.x, 0f, _controller.Direction.y);
@@ -38,6 +41,7 @@ public abstract class Movement : InGameObject, IInitializable<IController, Movem
 
         _speed = _maxSpeed;
         _rotationSpeed = _maxRotationSpeed;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void FixedUpdate()
@@ -52,7 +56,8 @@ public abstract class Movement : InGameObject, IInitializable<IController, Movem
 
         OnUpdate();
     }
-
+    private float X, Y, Z,EulerX=0,EulerY=0,speed=100;
+    
     private void Move(Vector3 direction)
     {
         /*
@@ -64,16 +69,20 @@ public abstract class Movement : InGameObject, IInitializable<IController, Movem
             float speed = _rotationSpeed * Velocity;
             transform.rotation = Quaternion.RotateTowards(transform.rotation, _controller.Rotate(direction), speed);
    */
+        X=Input.GetAxis("Mouse X")*Time.deltaTime*speed;
+        Y= -Input.GetAxis("Mouse Y") * Time.deltaTime*speed;
+        EulerX = (transform.rotation.eulerAngles.x + Y) % 360;
+        EulerY = (transform.rotation.eulerAngles.y + X) % 360;
+        transform.rotation = Quaternion.Euler(EulerX, EulerY, 0);
+      //  print(transform.rotation.eulerAngles.y);
+        _rigidbody.velocity = _speed * Time.deltaTime * direction.z*new Vector3( transform.forward.x,0,transform.forward.z);
       
-        
-            _rigidbody.velocity = _speed * Time.deltaTime * direction.z*new Vector3((float)Math.Sin(Rotation),0, (float)Math.Cos(Rotation));
-      
-            Rotation += (float)Math.PI * direction.x / (100);
-            float speed = _rotationSpeed * Velocity;
-        Quaternion rot = _controller.Rotate(new Vector3((float)Math.Sin(Rotation), 0, (float)Math.Cos(Rotation)));
-        rot.x = 0;
-        rot.z = 0;
-            transform.rotation = Quaternion.RotateTowards(transform.rotation,rot, speed);
+        //    Rotation += (float)Math.PI * direction.x / (100);
+        //    float speed = _rotationSpeed * Velocity;
+        //Quaternion rot = _controller.Rotate(new Vector3((float)Math.Sin(Rotation), 0, (float)Math.Cos(Rotation)));
+        //rot.x = 0;
+        //rot.z = 0;
+        //    transform.rotation = Quaternion.RotateTowards(transform.rotation,rot, speed);
         
     }
 
