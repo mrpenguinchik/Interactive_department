@@ -21,6 +21,7 @@ public class TestWindow : Window
     {
         if (Task < Logic.Length)
         {
+            Cursor.lockState = CursorLockMode.None;
             Logic[Task].StartTask();
            _button.onClick.RemoveAllListeners();
            _button.onClick.AddListener(Logic[Task].SubmitOrder);
@@ -28,6 +29,7 @@ public class TestWindow : Window
     }
         else
         {
+            Cursor.lockState = CursorLockMode.Locked;
             zone.gameObject.SetActive(false);
             gameObject.SetActive(false);
         }
