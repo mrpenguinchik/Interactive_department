@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -21972,7 +21972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 1242478680}
-  _logic: {fileID: 0}
+  _logic: {fileID: 361562357}
   _Slots: 0000000001000000020000000300000004000000
 --- !u!1 &1243048532
 GameObject:
@@ -28379,7 +28379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 1577954977}
-  _logic: {fileID: 0}
+  _logic: {fileID: 361562357}
   _Slots: 010000000100000002000000
 --- !u!114 &1577954977
 MonoBehaviour:
@@ -31552,7 +31552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 1833622403}
-  _logic: {fileID: 0}
+  _logic: {fileID: 361562357}
   _Slots: 0000000000000000010000000100000002000000
 --- !u!114 &1833622403
 MonoBehaviour:
