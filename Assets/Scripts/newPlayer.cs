@@ -1,14 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class newPlayer : Interactable<ITeacher>
-{ 
+{
+    bool KeyState=false;
+    Coroutine cor=null;
     protected override void OnInteract(ITeacher obj)
     {
-        if (Input.GetKey(KeyCode.E))
+      
+        this.OnEndInteract = () => { StopCoroutine(cor); KeyState = false; obj.ShowTeacher(false); };
+        if (cor == null)
         {
-            obj.ShowTeacher();
+            cor = StartCoroutine(input(obj));
         }
+
     }
+    public IEnumerator input(ITeacher obj)
+    {
+
+        yield return new WaitUntil(()=>Input.GetKey(KeyCode.E));
+        KeyState = !KeyState;
+        obj.ShowTeacher(KeyState);
+        yield return new WaitForSeconds(1);
+        cor = null;
+    }
+    
 }

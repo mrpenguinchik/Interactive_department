@@ -677,6 +677,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2956171750576197542}
   - component: {fileID: 8645917538773238194}
+  - component: {fileID: 6598667421406105069}
   m_Layer: 6
   m_Name: DeskWIthPc2
   m_TagString: Untagged
@@ -721,8 +722,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15b843ecab9bdee4abfba5b42a97a627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  desc: 
+  teacher: {fileID: 0}
+--- !u!65 &6598667421406105069
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2956171750576197543}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.1076927, z: 3.1161723}
+  m_Center: {x: -0.0000000049270987, y: -0.55384636, z: 1.0580869}
 --- !u!1 &2956171750639616477
 GameObject:
   m_ObjectHideFlags: 0

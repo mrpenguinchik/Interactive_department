@@ -6,14 +6,14 @@ public class Teachers : MonoBehaviour,ITeacher
 { 
     [SerializeField] Teacher teacher;
 
-    public void ShowTeacher()
+    public void ShowTeacher(bool state)
     {
-        NewViewPort._viewPort.Show_teachers(teacher);
+        NewViewPort._viewPort.Show_teachers(teacher,state);
     }
 }
 public interface ITeacher
 {
-    public void ShowTeacher();
+    public void ShowTeacher(bool state);
     
     
 }
