@@ -4,13 +4,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class newPlayer : Interactable<ITeacher>
-{
+{ 
     bool KeyState=false;
     Coroutine cor=null;
     protected override void OnInteract(ITeacher obj)
     {
       
-        this.OnEndInteract = () => { StopCoroutine(cor); KeyState = false; obj.ShowTeacher(false); };
+        this.OnEndInteract = () => { if (cor != null) { StopCoroutine(cor); } cor = null; KeyState = false; obj.ShowTeacher(false); };
         if (cor == null)
         {
             cor = StartCoroutine(input(obj));
@@ -25,6 +25,7 @@ public class newPlayer : Interactable<ITeacher>
         obj.ShowTeacher(KeyState);
         yield return new WaitForSeconds(1);
         cor = null;
+        
     }
     
 }

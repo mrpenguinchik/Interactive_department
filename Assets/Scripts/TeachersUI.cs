@@ -15,6 +15,8 @@ public class TeachersUI : MonoBehaviour
     [SerializeField] TMP_Text Uch_zvan;
     [SerializeField] TMP_Text Ped_staj;
     [SerializeField] TMP_Text Obj_staj;
+    [SerializeField] TMP_Text Disc;
+    [SerializeField] TMP_Text Qualification;
     [SerializeField] MPImage photo;
 public void Show(Teacher teacher,bool state)
     {
@@ -29,11 +31,13 @@ public void Show(Teacher teacher,bool state)
             Uch_zvan.text = teacher.Uch_zvan;
             Ped_staj.text = teacher.Ped_staj;
             Obj_staj.text = teacher.Obj_staj;
+            Disc.text = teacher.Disc;
+            Qualification.text = teacher.Qualification;
             photo.sprite = teacher.sprite;
         }
         else
         {
-            cont.Hide(false);
+            cont.Hide(true);
         }
     }
 }
