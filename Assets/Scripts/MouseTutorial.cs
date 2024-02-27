@@ -9,6 +9,7 @@ public class MouseTutorial : MonoBehaviour
  [SerializeField] MPImage mouse2;
     [SerializeField] GameObject player1;
     [SerializeField] GameObject player2;
+    [SerializeField] GameObject player3;
     // Start is called before the first frame update
     public void Init()
     {
@@ -20,8 +21,10 @@ public class MouseTutorial : MonoBehaviour
         {
             mouse1.transform.DOLocalMoveX(30, 2);
             player1.transform.DORotate(new Vector3(0, 0, -30), 2);
+            player3.transform.DORotate(new Vector3(0, 0, -30), 2);
             yield return new WaitForSeconds(2f);
             player1.transform.DORotate(new Vector3(0, 0, 30), 2);
+            player3.transform.DORotate(new Vector3(0, 0, 30), 2);
             mouse1.transform.DOLocalMoveX(-30, 2);
             yield return new WaitForSeconds(2f);
         }
