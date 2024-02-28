@@ -9,10 +9,12 @@ public class NewPlayGameState : PlayGameState
     [SerializeField] private NewViewPort _newViewPort;
     [SerializeField] private FPS _fplayer;
     [SerializeField] private TestZone[] _testZones;
+    [SerializeField] private newPlayer play;
     private IController _controller;
     public override void Init(GameConfig config)
     {
         base.Init(config);
+        play.init();
         //StartProgrammingTest();
         for (int i = 0; i < _testWindows.Length; i++)
         {
