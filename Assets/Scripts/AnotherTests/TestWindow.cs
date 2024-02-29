@@ -14,7 +14,11 @@ public class TestWindow : Window
 
     public override void Init()
     {
-        NextTask();
+
+        if (Task == 0)
+        {
+            NextTask();
+        }
     }
 
     public void NextTask()
