@@ -17,15 +17,15 @@ using UnityEngine.EventSystems;
 
 public class ItemSlot : MonoBehaviour, IDropHandler {
 
-    [SerializeField] int index;
-    
-   public void SetIndex(int id) { index = id; }
+    [SerializeField] private int _index;
+ 
+   public void SetIndex(int id) { _index = id; }
     public void OnDrop(PointerEventData eventData) {
         Debug.Log("OnDrop");
         if (eventData.pointerDrag != null) {
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
             print(eventData.pointerDrag.GetComponent<Block>());
-            eventData.pointerDrag.GetComponent<Block>().Dropped(index);
+            eventData.pointerDrag.GetComponent<Block>().Dropped(_index);
         }
     }
 

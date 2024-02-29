@@ -11,6 +11,6 @@ public class Def:MonoBehaviour
     {
         _textMeshPro.text = text;
      
-        _textMeshPro.transform.localScale = new Vector3(1 / length, 1, 1);
+        _textMeshPro.transform.localScale = new Vector3(1f / length, 1, 1);
     }
 }

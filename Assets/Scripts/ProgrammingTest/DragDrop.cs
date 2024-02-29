@@ -18,7 +18,7 @@ using UnityEngine.EventSystems;
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler {
   
     [SerializeField] private Canvas canvas;
-
+    [SerializeField] private Block draggable;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
 
@@ -28,14 +28,15 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     }
 
     public void OnBeginDrag(PointerEventData eventData) {
-       // Debug.Log("OnBeginDrag");
+        // Debug.Log("OnBeginDrag");
+        draggable.Dropped(-1);
         canvasGroup.alpha = .6f;
         canvasGroup.blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData) {
         //Debug.Log("OnDrag");
-        print(eventData.position.ToString() + "   " + Screen.currentResolution.ToString()) ;
+      //  print(eventData.position.ToString() + "   " + Screen.currentResolution.ToString()) ;
         rectTransform.anchoredPosition += new Vector2(eventData.delta.x*1920/Screen.width, eventData.delta.y * 1080 / Screen.height); //new Vector2( eventData.delta.x* 5369.1f/1920, eventData.delta.y * 3095.8f / 1080);
     }
 

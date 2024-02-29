@@ -6,6 +6,8 @@ using UnityEngine;
 [Serializable]
 public class Answer
 {
+    [SerializeField] private float _marginLeft;
+    public float GetMargin()=>_marginLeft;
     [SerializeField] private bool _isDef;
     [SerializeField]
     private string _answer;
@@ -13,11 +15,8 @@ public class Answer
     public int GetPos() => pos;
     public string GetData() => _answer;
     public bool IsDef() => _isDef;
- [Button]
-    private void autoChangeLenght()
-    {
-        _lenght=_answer.Length;
-    }
+
+ 
     [SerializeField] private int _lenght;
     [SerializeField] private bool _isWrong;
     public int GetLenght() => _lenght;
