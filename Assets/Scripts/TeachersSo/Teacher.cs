@@ -1,4 +1,4 @@
-using TMPro;
+
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Teacher", menuName = "ScriptableObjects/Teacher", order = 1)]

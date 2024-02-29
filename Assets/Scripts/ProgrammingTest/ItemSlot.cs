@@ -18,6 +18,8 @@ using UnityEngine.EventSystems;
 public class ItemSlot : MonoBehaviour, IDropHandler {
 
     [SerializeField] int index;
+    
+   public void SetIndex(int id) { index = id; }
     public void OnDrop(PointerEventData eventData) {
         Debug.Log("OnDrop");
         if (eventData.pointerDrag != null) {
