@@ -12,4 +12,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d6abcb6ca4acdd408090db972ebf866, type: 3}
   m_Name: ProgTask2
   m_EditorClassIdentifier: 
-  _answerList: []
+  _desc: "\u0417\u0430\u0434\u0430\u0447\u0430 \u0441\u043E\u0437\u0434\u0430\u0442\u044C
+    \u0444\u0443\u043D\u043A\u0446\u0438\u044E \u0432\u043E\u0437\u0440\u0430\u0449\u0430\u044E\u0449\u0443\u044E
+    \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E\u0435 \u0446\u0435\u043B\u043E\u0435
+    \u0447\u0438\u0441\u043B\u043E \u0438\u0437 \u0441\u043F\u0438\u0441\u043A\u0430"
+  _answerList:
+  - _marginLeft: 0
+    _isDef: 1
+    _answer: 'def max_func(lst):'
+    pos: 0
+    _lenght: 6
+    _isWrong: 0
+  - _marginLeft: 0
+    _isDef: 0
+    _answer: max=-sys.maxint
+    pos: 0
+    _lenght: 6
+    _isWrong: 0
+  - _marginLeft: 0
+    _isDef: 0
+    _answer: max=0
+    pos: 0
+    _lenght: 6
+    _isWrong: 1
+  - _marginLeft: 0
+    _isDef: 0
+    _answer: 'for x in lst:'
+    pos: 1
+    _lenght: 6
+    _isWrong: 0
+  - _marginLeft: 1
+    _isDef: 0
+    _answer: 'if x>max:'
+    pos: 2
+    _lenght: 6
+    _isWrong: 0
+  - _marginLeft: 2
+    _isDef: 0
+    _answer: max=x
+    pos: 3
+    _lenght: 6
+    _isWrong: 0
+  - _marginLeft: 0
+    _isDef: 0
+    _answer: return max
+    pos: 4
+    _lenght: 6
+    _isWrong: 0
+  - _marginLeft: 0
+    _isDef: 0
+    _answer: print(max)
+    pos: 0
+    _lenght: 6
+    _isWrong: 1

@@ -12,5 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2abe7033dbdc16458f270c3d916ea20, type: 3}
   m_Name: Test 1
   m_EditorClassIdentifier: 
-  _desc: 
-  _teastAnswers: []
+  _desc: "\u0446\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u0430\u044F \u043C\u0430\u0448\u0438\u043D\u0430
+    \u0441\u0435\u0442\u0438 \u043D\u0430\u0437\u044B\u0432\u0430\u0435\u0442\u0441\u044F:"
+  _teastAnswers:
+  - answer: "\u0446\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u044B\u043C \u043F\u0440\u043E\u0446\u0435\u0441\u0441\u043E\u0440\u043E\u043C"
+    isRight: 0
+  - answer: "\u042D\u0412\u041C"
+    isRight: 0
+  - answer: "\u0427\u0435\u043F\u044B\u0440\u043A\u0430"
+    isRight: 0
+  - answer: "\u0421\u0435\u0440\u0432\u0435\u0440\u043E\u043C"
+    isRight: 1
