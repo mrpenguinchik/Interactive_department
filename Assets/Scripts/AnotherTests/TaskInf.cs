@@ -17,7 +17,7 @@ public class TaskInf : Test
     List<AnswerVariant> _answerVariants = new List<AnswerVariant>() ;
     [SerializeField] TMP_Text desc;
     const float y = 140;
-    const float x1 = 34;
+    const float x1 = -300;
     public void CheckAnswer()
     {
         bool IsRight=true;

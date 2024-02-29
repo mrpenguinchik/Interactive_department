@@ -25,10 +25,11 @@ public class NewPlayGameState : PlayGameState
               
                _testWindows[k].Init();
                _testWindows[k].Show(true);
+               Cursor.lockState = CursorLockMode.None;
            };
             _testZones[k].OnEndInteract += () =>
             {
-
+                Cursor.lockState = CursorLockMode.Locked;
                 _testWindows[k].Hide(false);
             };
         }

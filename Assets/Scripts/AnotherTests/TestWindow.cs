@@ -25,7 +25,7 @@ public class TestWindow : Window
     {
         if (Task < Logic.Length)
         {
-            Cursor.lockState = CursorLockMode.None;
+        
             Logic[Task].StartTask();
            _button.onClick.RemoveAllListeners();
            _button.onClick.AddListener(Logic[Task].SubmitOrder);
