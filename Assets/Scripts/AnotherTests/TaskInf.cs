@@ -43,37 +43,6 @@ public class TaskInf : Test
             infTest.WrongRight(false);
         }
     }
-    /*public void ValueChanged(bool x)
-    {
-        int var;
-       int j = -1;
-        for (int i = 0; i < Toggles.Length; i++)
-        {
-            if (Toggles[i].isOn)
-            {
-                j = i;
-            }
-        }
-        var = j+1;
-        if (j == -1)
-        {
-            for (int i = 0; i < Toggles.Length; i++)
-            {
-                if (Toggles[i].interactable)
-                {
-                    j = i;
-                }
-            }
-        }
-        for(int i = 0;i< Toggles.Length; i++)
-        {
-            if (j!=i)
-            {
-                Toggles[i].interactable=(!Toggles[j].isOn);
-            }
-        }
-  
-    }*/
 
     public override void StartTask()
     {
