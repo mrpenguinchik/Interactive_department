@@ -18,7 +18,8 @@ public class VisualScriptingTask :Test
     List<Answer> Answers;
    const float x1=-600;
     const float x2 = 0;
-    const float  ys= 250;
+    const float  ys= 300;
+    const float yy = 55;
     public override void StartTask()
     {
         Answers =new List<Answer>( TestData.GetAnswers());
@@ -55,7 +56,7 @@ public class VisualScriptingTask :Test
             {
                 currentBlock.localPosition = new Vector2(x1+(answer.GetMargin()*50), y1);
                 currentBlock.localScale = new Vector3(answer.GetLenght() * 1f, 1, 1);
-                y1 -= 70f;
+                y1 -= yy;
             }
 
 
@@ -68,7 +69,7 @@ public class VisualScriptingTask :Test
             currentBlock = x.GetComponent<RectTransform>();
             currentBlock.localPosition = new Vector3(x2, y2);
             currentBlock.localScale = new Vector3(answer.GetLenght() * 1f, 1, 1);
-            y2 -= 70f;
+            y2 -= yy;
             BlockList.Add(x.GetComponent<Block>());
             BlockList.Last<Block>().SetData(this, answer.GetPos(), answer.GetData(), answer.GetLenght(), answer.IsWrong());
         }

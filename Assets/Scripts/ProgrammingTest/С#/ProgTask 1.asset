@@ -36,7 +36,7 @@ MonoBehaviour:
     _isWrong: 0
   - _marginLeft: 1
     _isDef: 0
-    _answer: for(inti=1;i<nums.Length;i++)
+    _answer: for(int i=1;i<nums.Length;i++)
     pos: 1
     _lenght: 6
     _isWrong: 0
