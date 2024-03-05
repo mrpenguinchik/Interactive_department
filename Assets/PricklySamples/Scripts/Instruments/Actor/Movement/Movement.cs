@@ -2,7 +2,6 @@ using Prickly.Core;
 using NaughtyAttributes;
 using UnityEngine;
 using System;
-using Unity.PlasticSCM.Editor.WebApi;
 
 public abstract class Movement : InGameObject, IInitializable<IController, MovementStat>, IUpgradable
 {

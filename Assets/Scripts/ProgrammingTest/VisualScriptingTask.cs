@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using static ToonyColorsPro.ShaderGenerator.Enums;
 
 public class VisualScriptingTask :Test
 { [SerializeField] UIController ui;
